@@ -23,7 +23,7 @@ public class LoginStep {
     }
     @Then("is success to dashboard page")
     public void is_success_to_dashboard_page() {
-        SupportFunction.TimeDelay(1000);
+        SupportFunction.WaitElementVisible("#root > div.header > div.title");
         String actual = GeneralAction.GetValue("#root > div.header > div.title");
         String expected = "Dashboard";
         boolean check = SoftAssert.TitleCompare(expected, actual);
